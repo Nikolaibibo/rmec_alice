@@ -26,8 +26,8 @@ var isPowered = false;
 var waittime = 10000;
 
 // hastag/searchterm for API
-//var searchTerm = "nodejs";
-var searchTerm = "#Alice,#aufschrei,#bushido,#heidiklum,#likeagirl,#porno";
+var searchTerm = "#Alice,#aufschrei,#bushido,#heidiklum,#likeagirl,#pornographie,#empörungsgesellschaft";
+//var searchTerm = "#Alice,#aufschrei,#bushido,#heidiklum,#likeagirl,#porno";
 
 
 function powerUp () {
