@@ -24,10 +24,11 @@ var pusher = new PushBullet(credentials.pushbullet_key);
 var isBusy = false;
 var isPowered = false;
 var waittime = 10000;
+var pumpTime = 600;
 
 // hastag/searchterm for API
-var searchTerm = "#Alice,#aufschrei,#bushido,#heidiklum,#likeagirl,#pornographie,#empörungsgesellschaft";
-//var searchTerm = "#Alice,#aufschrei,#bushido,#heidiklum,#likeagirl,#porno";
+//var searchTerm = "#Alice,#aufschrei,#bushido,#heidiklum,#likeagirl,#pornographie,#empörungsgesellschaft,#porno,#heidiklum";
+var searchTerm = "#Sascha,#nsa,#angelamerkel,#dasinternetistkaputt,#habenichtszuverbergen,#lassunsreden";
 
 
 function powerUp () {
@@ -54,7 +55,7 @@ function startStream (conn) {
 
             if (!isPowered) powerUp();
 
-            setTimeout(powerDown, 600);
+            setTimeout(powerDown, pumpTime);
 
 		});
 
