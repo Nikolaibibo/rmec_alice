@@ -54,7 +54,7 @@ function startStream (conn) {
 
             if (!isPowered) powerUp();
 
-            setTimeout(powerDown, 600);
+            setTimeout(powerDown, 900);
 
 		});
 
