@@ -24,7 +24,7 @@ var pusher = new PushBullet(credentials.pushbullet_key);
 var isBusy = false;
 var isPowered = false;
 var waittime = 10000;
-var pumpTime = 1000;
+var pumpTime = 800;
 
 // hastag/searchterm for API
 //var searchTerm = "#Alice,#aufschrei,#bushido,#heidiklum,#likeagirl,#pornographie,#empörungsgesellschaft,#porno,#heidiklum";
