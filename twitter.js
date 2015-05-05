@@ -23,7 +23,7 @@ var pumpTime = 1100;
 
 // hastag/searchterm for API
 //var searchTerm = "#Alice,#aufschrei,#bushido,#heidiklum,#likeagirl,#pornographie,#empörungsgesellschaft,#porno,#heidiklum";
-var searchTerm = "#Sascha,#nsa,#angelamerkel,#dasinternetistkaputt,#habenichtszuverbergen,#lassunsreden,#rp15";
+var searchTerm = "#Sascha,#nsa,#angelamerkel,#dasinternetistkaputt,#habenichtszuverbergen,#lassunsreden";
 
 
 function powerUp () {
@@ -32,8 +32,13 @@ function powerUp () {
 }
 
 function powerDown () {
-  isPowered = false;
+  //isPowered = false;
   pfio.digital_write(0,0);
+  setTimeout(doReset, 10000);
+}
+
+function doReset () {
+  isPowered = false;
 }
 
 // start reading stream
