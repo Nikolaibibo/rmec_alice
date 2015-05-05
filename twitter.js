@@ -53,6 +53,7 @@ function startStream (conn) {
 		stream.on('error', function(error) {
       //sendAlertNotification();
       // sendSMS("nodejs server error!");
+      powerDown();
       throw error;
   		});
 	});
