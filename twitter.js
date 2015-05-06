@@ -19,7 +19,7 @@ var client = new Twitter({
 var isBusy = false;
 var isPowered = false;
 var waittime = 10000;
-var pumpTime = 1100;
+var pumpTime = 1400;
 
 // hastag/searchterm for API
 //var searchTerm = "#Alice,#aufschrei,#bushido,#heidiklum,#likeagirl,#pornographie,#empörungsgesellschaft,#porno,#heidiklum";
