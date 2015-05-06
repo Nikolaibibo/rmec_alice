@@ -27,11 +27,13 @@ var searchTerm = "#Sascha,#nsa,#angelamerkel,#dasinternetistkaputt,#habenichtszu
 
 
 function powerUp () {
+  console.log("power up");
   isPowered = true;
   pfio.digital_write(0,1);
 }
 
 function powerDown () {
+  console.log("power down");
   //isPowered = false;
   pfio.digital_write(0,0);
   setTimeout(doReset, 5000);
