@@ -36,6 +36,20 @@ function powerDown () {
   setTimeout(doReset, 5000);
 }
 
+function startBlinking () {
+
+  isPowered = true;
+
+  pfio.digital_write(0,1);
+  setTimeout(function(){ pfio.digital_write(0,0) }, 500);
+  setTimeout(function(){ pfio.digital_write(0,1) }, 1000);
+  setTimeout(function(){ pfio.digital_write(0,0) }, 1500);
+  setTimeout(function(){ pfio.digital_write(0,1) }, 2000);
+  setTimeout(function(){ pfio.digital_write(0,0); isPowered = false }, 2500);
+
+}
+
+
 function doReset () {
   isPowered = false;
 }
@@ -50,8 +64,10 @@ function startStream (conn) {
     		stream.on('data', function(tweet) {
       			console.log("@" + tweet.user.screen_name + " :::: " + tweet.text + "  ::::  " + tweet.created_at);
       			//var tweetObject = {text:tweet.text, user:tweet.user.screen_name, time:tweet.created_at, location:tweet.user.location, userpic:tweet.user.profile_image_url};
-            if (!isPowered) powerUp();
-            setTimeout(powerDown, pumpTime);
+            //if (!isPowered) powerUp();
+            //setTimeout(powerDown, pumpTime);
+
+            if (!isPowered) startBlinking();
 		});
 
 		stream.on('error', function(error) {
