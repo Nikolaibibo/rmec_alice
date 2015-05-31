@@ -3,8 +3,6 @@ var pfio = require('piface-node');
 
 pfio.init();
 
-// config for strings, credentials for twitter, twilio and pushbullet git ignored
-var config = require('./config.json');
 var credentials = require('./credentials_alice.json');
 
 var client = new Twitter({
@@ -16,15 +14,14 @@ var client = new Twitter({
 
 // var for not sending too much sms - by now with bad setTimeout
 // TODO: change for performance
-var isBusy = false;
 var isPowered = false;
 var waittime = 10000;
 var pumpTime = 1400;
 
 // hastag/searchterm for API
 //var searchTerm = "#Alice,#aufschrei,#bushido,#heidiklum,#likeagirl,#pornographie,#empörungsgesellschaft,#porno,#heidiklum";
-var searchTerm = "#Sascha,#nsa,#angelamerkel,#dasinternetistkaputt,#habenichtszuverbergen,#lassunsreden";
-
+//var searchTerm = "#Sascha,#nsa,#angelamerkel,#dasinternetistkaputt,#habenichtszuverbergen,#lassunsreden";
+var searchTerm = "forkrulez"
 
 function powerUp () {
   console.log("power up");
@@ -66,11 +63,6 @@ function startStream (conn) {
 	});
 }
 
-// reset status
-function resetStatus () {
-  console.log("resetStatus");
-  isBusy = false;
-}
 
 // go
 startStream();
