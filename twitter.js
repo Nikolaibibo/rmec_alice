@@ -45,6 +45,10 @@ function startBlinking () {
   setTimeout(function(){ pfio.digital_write(0,1) }, 800);
   setTimeout(function(){ pfio.digital_write(0,0) }, 1500);
   setTimeout(function(){ pfio.digital_write(0,1) }, 1700);
+  setTimeout(function(){ pfio.digital_write(0,0) }, 1800);
+  setTimeout(function(){ pfio.digital_write(0,1) }, 2000);
+  setTimeout(function(){ pfio.digital_write(0,0) }, 2200);
+  setTimeout(function(){ pfio.digital_write(0,1) }, 2400);
   setTimeout(function(){ pfio.digital_write(0,0); isPowered = false }, 2500);
 
 }
