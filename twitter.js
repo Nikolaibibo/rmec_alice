@@ -68,10 +68,10 @@ function startStream (conn) {
     		stream.on('data', function(tweet) {
       			console.log("@" + tweet.user.screen_name + " :::: " + tweet.text + "  ::::  " + tweet.created_at);
       			//var tweetObject = {text:tweet.text, user:tweet.user.screen_name, time:tweet.created_at, location:tweet.user.location, userpic:tweet.user.profile_image_url};
-            //if (!isPowered) powerUp();
-            //setTimeout(powerDown, pumpTime);
+            if (!isPowered) powerUp();
+            setTimeout(powerDown, pumpTime);
 
-            if (!isPowered) startBlinking();
+            //if (!isPowered) startBlinking();
 		});
 
 		stream.on('error', function(error) {
