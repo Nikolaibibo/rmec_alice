@@ -21,7 +21,7 @@ var pumpTime = 2200;
 // hastag/searchterm for API
 //var searchTerm = "#Alice,#aufschrei,#bushido,#heidiklum,#likeagirl,#pornographie,#empörungsgesellschaft,#porno,#heidiklum";
 //var searchTerm = "#Sascha,#nsa,#angelamerkel,#dasinternetistkaputt,#habenichtszuverbergen,#lassunsreden";
-var searchTerm = "forkrulez, forkrules"
+var searchTerm = "forkrulez, forkrules, heuldoch";
 
 function powerUp () {
   console.log("power up");
