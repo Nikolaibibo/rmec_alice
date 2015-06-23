@@ -1,10 +1,14 @@
+// requires for twitter and piface modules
 var Twitter = require('twitter');
 var pfio = require('piface-node');
 
+// initializing the piface
 pfio.init();
 
+// loads the twitter API secrets that are excluded
 var credentials = require('./credentials_alice.json');
 
+// sets up the twitter client
 var client = new Twitter({
   consumer_key: credentials.twitter_consumer_key,
   consumer_secret: credentials.twitter_consumer_secret,
@@ -12,8 +16,7 @@ var client = new Twitter({
   access_token_secret: credentials.twitter_access_token_secret
 });
 
-// var for not sending too much sms - by now with bad setTimeout
-// TODO: change for performance
+// control vars for status, wait time and pump time
 var isPowered = false;
 var waittime = 10000;
 var pumpTime = 2200;
@@ -23,12 +26,14 @@ var pumpTime = 2200;
 //var searchTerm = "#Sascha,#nsa,#angelamerkel,#dasinternetistkaputt,#habenichtszuverbergen,#lassunsreden";
 var searchTerm = "forkrulez, forkrules, heuldoch";
 
+// powers up the pump by switching the relay
 function powerUp () {
   console.log("power up");
   isPowered = true;
   pfio.digital_write(0,1);
 }
 
+// powers down the pump by switching the relay
 function powerDown () {
   console.log("power down");
   //isPowered = false;
@@ -36,24 +41,7 @@ function powerDown () {
   setTimeout(doReset, 5000);
 }
 
-function startBlinking () {
-
-  isPowered = true;
-
-  pfio.digital_write(0,1);
-  setTimeout(function(){ pfio.digital_write(0,0) }, 500);
-  setTimeout(function(){ pfio.digital_write(0,1) }, 800);
-  setTimeout(function(){ pfio.digital_write(0,0) }, 1500);
-  setTimeout(function(){ pfio.digital_write(0,1) }, 1700);
-  setTimeout(function(){ pfio.digital_write(0,0) }, 1800);
-  setTimeout(function(){ pfio.digital_write(0,1) }, 2000);
-  setTimeout(function(){ pfio.digital_write(0,0) }, 2200);
-  setTimeout(function(){ pfio.digital_write(0,1) }, 2400);
-  setTimeout(function(){ pfio.digital_write(0,0); isPowered = false }, 2500);
-
-}
-
-
+// resets the status
 function doReset () {
   isPowered = false;
 }
